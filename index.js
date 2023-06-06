@@ -7,6 +7,7 @@ app.use(express.urlencoded({
   }));
 app.set("view engine","ejs");
 app.use(express.static("public"));
+const PORT=process.env.PORT || 3000
 
 const mongoose=require("mongoose")
 mongoose.connect("mongodb+srv://admin-pranav:TestPassword@cluster0.y912n0q.mongodb.net/ToDoListDB")
@@ -85,6 +86,6 @@ app.post("/delete", async function(req,res){
     }
 })
 
-app.listen(3000,()=>{
-    console.log("Listening on port 3000")
+app.listen(PORT,()=>{
+    console.log("Listening on port")
 })
